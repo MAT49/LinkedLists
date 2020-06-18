@@ -4,4 +4,36 @@
   <artifactId>LinkedLists</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Linked Lists</name>
+  
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>14</maven.compiler.source>
+    <maven.compiler.target>14</maven.compiler.target>
+    <junit.jupiter.version>5.6.0</junit.jupiter.version>
+  </properties>
+  
+    <dependencies>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>${junit.jupiter.version}</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>${junit.jupiter.version}</version>
+          <scope>test</scope>
+	  </dependency>
+  </dependencies>
+  
+  <build>
+	  <plugins>
+	  	<plugin>
+	  		<artifactId>maven-surefire-plugin</artifactId>
+	  		<version>3.0.0-M4</version>
+	  	</plugin>
+	  </plugins>
+  </build>
+  
 </project>
