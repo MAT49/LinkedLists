@@ -2,18 +2,15 @@ package me.nonnon;
 
 class Node {
 
-
 	Node head;
-	String description;
+	String data;
 	
-	public Node(){
-		head = null;
-		description = "generic";
+	Node(){		
+		data = "generic";
 	}
 	
-	public Node(Node head, String description) {		
-		this.head = head;
-		this.description = description;
+	Node(String d) {			
+		data = d;
 	}
 	
 }
