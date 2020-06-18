@@ -2,7 +2,7 @@ package me.nonnon;
 
 class Node {
 
-	Node head;
+	Node next;
 	String data;
 	
 	Node(){		
