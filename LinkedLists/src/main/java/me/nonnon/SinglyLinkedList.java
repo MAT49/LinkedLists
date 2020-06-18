@@ -3,8 +3,8 @@ package me.nonnon;
 public class SinglyLinkedList {
 	Node head;
 	
-	public SinglyLinkedList add(SinglyLinkedList list, String s) {
-		Node newNode = new Node(s);
+	public SinglyLinkedList add(SinglyLinkedList list, int num) {
+		Node newNode = new Node(num);
 		newNode.next = null;
 		
 		if (list.head == null) {
@@ -16,10 +16,10 @@ public class SinglyLinkedList {
 				ptr = ptr.next;
 			}
 			ptr.next = newNode;
-		}
-		
+		}		
 		return list;
 	}
 	
+	 
 
 }

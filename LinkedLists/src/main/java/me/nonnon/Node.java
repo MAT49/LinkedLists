@@ -3,13 +3,11 @@ package me.nonnon;
 class Node {
 
 	Node next;
-	String data;
+	int data;
 	
-	Node(){		
-		data = "generic";
-	}
+	Node(){	}
 	
-	Node(String d) {			
+	Node(int d) {			
 		data = d;
 	}
 	
