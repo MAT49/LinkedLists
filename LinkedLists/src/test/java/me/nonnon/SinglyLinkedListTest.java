@@ -14,8 +14,11 @@ class SinglyLinkedListTest {
 		assertNull(list.head);
 		
 		list.add(list, 5);
-		assertNotNull(list.head);
-		assertNull(list.head.next);
+		assertAll("Should return if node of the linkedlist is set up correctly",
+		() -> assertNotNull(list.head),
+		() -> assertEquals(5, list.head.data),
+		() -> assertNull(list.head.next)
+		);
 		
 		
 		
