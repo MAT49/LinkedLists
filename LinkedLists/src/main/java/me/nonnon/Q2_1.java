@@ -22,5 +22,21 @@ public class Q2_1 {
 		return list;
 	}
 	
+	public SinglyLinkedList removeDupWithoutBuffer(SinglyLinkedList list) {
+		Node current = list.head;
+		while (current != null) {
+			Node runner = current;
+			while (runner.next != null) {
+				if (runner.next.data == current.data) {
+					runner.next = runner.next.next;
+				} else {
+					runner = runner.next;
+				}
+			}
+			current = current.next;
+		}
+		return list;
+	}
+	
 
 }
