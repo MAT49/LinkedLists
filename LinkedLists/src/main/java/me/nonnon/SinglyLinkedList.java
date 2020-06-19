@@ -20,6 +20,17 @@ public class SinglyLinkedList {
 		return list;
 	}
 	
-	 
+	public int count() {
+		Node ptr = head;
+		int count = 0;
+		if (ptr == null) {
+			return 1;
+		}
+		while (ptr != null) {
+			count++;
+			ptr = ptr.next;
+		}
+		return count;
+	} 
 
 }

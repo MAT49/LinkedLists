@@ -6,7 +6,7 @@ public class Q2_1 {
 	// Write code to remove duplicates from an unsorted linked list. How would you solve this problem if a 
 	// temporary buffer is not allowed?
 	
-	public void removeDuplicates(SinglyLinkedList list) {
+	public SinglyLinkedList removeDuplicates(SinglyLinkedList list) {
 		HashSet<Integer> set = new HashSet<Integer>();
 		Node prev = null;
 		Node ptr = list.head;		
@@ -19,7 +19,8 @@ public class Q2_1 {
 			}
 			ptr = ptr.next;
 		}
-		
+		return list;
 	}
+	
 
 }
