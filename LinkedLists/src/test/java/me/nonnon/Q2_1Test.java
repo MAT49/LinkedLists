@@ -21,7 +21,7 @@ class Q2_1Test {
 		Q2_1 slist = new Q2_1();		
 		SinglyLinkedList listWithoutDup = slist.removeDuplicates(list);
 		
-		assertEquals(4, list.count());
+		assertEquals(4, listWithoutDup.count());
 	}
 
 }
