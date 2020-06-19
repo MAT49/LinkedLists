@@ -36,6 +36,22 @@ public class SinglyLinkedList {
 		}		
 	}
 	
+	public SinglyLinkedList remove(SinglyLinkedList list, int num) {
+		Node ptr = list.head;
+		
+		if (ptr.data == num) {
+			head = head.next;
+			return list;
+		}
+		while (ptr.next != null) {
+			if (ptr.next.data == num) {
+				ptr.next = ptr.next.next;
+			}
+		}
+		return list;
+	}
+	
+	
 	public int count() {
 		Node ptr = head;
 		int count = 0;
