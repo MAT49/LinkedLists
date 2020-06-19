@@ -49,7 +49,10 @@ class Q2_1Test {
 		
 		SinglyLinkedList listWithoutDup = slist.removeDupWithoutBuffer(list);
 		
-		assertEquals(4, list.count());
+		assertAll("Should return whether duplicate nodes were deleted",
+			() -> assertEquals(4, listWithoutDup.count()),
+			() -> assertEquals(2, listWithoutDup.head.next.data)
+		);
 		
 	}
 
