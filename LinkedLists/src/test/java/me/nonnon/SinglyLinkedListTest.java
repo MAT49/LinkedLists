@@ -19,10 +19,6 @@ class SinglyLinkedListTest {
 		() -> assertEquals(5, list.head.data),
 		() -> assertNull(list.head.next)
 		);
-		
-		
-		
-		
 	}
 
 }
