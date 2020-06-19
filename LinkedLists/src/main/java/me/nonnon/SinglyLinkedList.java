@@ -33,8 +33,7 @@ public class SinglyLinkedList {
 			}
 			prev.next = null;
 			return list;
-		}
-		
+		}		
 	}
 	
 	public int count() {
