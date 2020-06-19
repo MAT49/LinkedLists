@@ -46,7 +46,9 @@ public class SinglyLinkedList {
 		while (ptr.next != null) {
 			if (ptr.next.data == num) {
 				ptr.next = ptr.next.next;
+				return list;
 			}
+			ptr = ptr.next;
 		}
 		return list;
 	}
