@@ -20,6 +20,23 @@ public class SinglyLinkedList {
 		return list;
 	}
 	
+	public SinglyLinkedList remove(SinglyLinkedList list) {
+		if (list.head == null) {
+			return null;
+		}
+		else {
+			Node ptr = list.head;
+			Node prev = null;
+			while (ptr.next != null) {
+				prev = ptr;
+				ptr = ptr.next;				
+			}
+			prev.next = null;
+			return list;
+		}
+		
+	}
+	
 	public int count() {
 		Node ptr = head;
 		int count = 0;

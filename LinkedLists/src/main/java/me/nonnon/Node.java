@@ -3,7 +3,7 @@ package me.nonnon;
 class Node {
 
 	Node next;
-	int data;
+	int data;	
 	
 	Node(){	}
 	
