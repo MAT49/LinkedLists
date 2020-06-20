@@ -31,27 +31,29 @@ public class DoublyLinkedList<T> {
 		}
 	}
 	
-	public void removeSingleNode(T data)	{
+	public void removeSingleNodeRepeatedly(T data)	{
 		if (head == null) {
 			return;			
 		}
-		else if (head.data == data) {
-			head = head.next;  
-			return;
-		}
-		else {
-			LinkNode<T> ptr = head.next;
-			while (ptr.next != null) {
-				if (ptr.data == data) {		
+//		if (head.data == data) {
+//			head = head.next;
+//			removeSingleNodeRepeatedly(data);
+//		}
+		
+		LinkNode<T> ptr = head;
+		while (ptr != null) {
+			if (ptr.data == data) {
+				if (ptr.prev != null) {
 					ptr.prev.next = ptr.next;
-					if (ptr.next != null) {
-						ptr.next.prev = ptr.prev;						
-					}
-					return;
+				}				
+				if (ptr.next != null) {
+					ptr.next.prev = ptr.prev;						
 				}
-				ptr = ptr.next;
-			}			
-		}
+				
+			}
+			ptr = ptr.next;
+		}			
+		
 	}
 	
 	public T peek() {
@@ -59,19 +61,39 @@ public class DoublyLinkedList<T> {
 		return head.data;
 	}
 	
+	public int count() {
+		LinkNode<T> ptr = head;
+		int count = 0;
+		if (head == null) return 0;
+		while (ptr != null) {
+			count++;
+			ptr = ptr.next;
+			
+		}
+		return count;
+	}
+	
+	public void print() {
+		LinkNode<T> ptr = head;
+		while (ptr != null) {
+			System.out.println(ptr.data);
+			ptr = ptr.next;
+		}
+	}
+	
 	public static void main(String[] args) {
 		DoublyLinkedList<String> s = new DoublyLinkedList<String>();
 		s.addNode("first");
+		s.addNode("first");
+		s.addNode("second");
+		s.addNode("second");
 		s.addNode("second");
 		s.addNode("third");
 		s.addNode("fourth");
-		System.out.println(s.peek());
-		s.removeSingleNode("first");
-		System.out.println(s.peek());
-		s.removeSingleNode("fourth");
-		System.out.println(s.peek());
-		s.removeSingleNode("third");
-		System.out.println(s.peek());
+		s.removeSingleNodeRepeatedly("first");
+		s.removeSingleNodeRepeatedly("fourth");
+		System.out.println(s.count());
+		s.print();
 		
 	}
 	

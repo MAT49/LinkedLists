@@ -58,7 +58,7 @@ public class SinglyLinkedList {
 		Node ptr = head;
 		int count = 0;
 		if (ptr == null) {
-			return 1;
+			return 0;
 		}
 		while (ptr != null) {
 			count++;
