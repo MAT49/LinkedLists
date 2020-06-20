@@ -32,14 +32,21 @@ public class DoublyLinkedList<T> {
 	}
 	
 	public void removeSingleNode(T data)	{
-		if (head == null) ;			
-		else if (head.data == data)  head = head.next;
+		if (head == null) {
+			return;			
+		}
+		else if (head.data == data) {
+			head = head.next;  
+			return;
+		}
 		else {
-			LinkNode<T> ptr = head;
-			while (ptr.data != null) {
-				if (ptr.data == data) {
+			LinkNode<T> ptr = head.next;
+			while (ptr.next != null) {
+				if (ptr.data == data) {		
 					ptr.prev.next = ptr.next;
-					ptr.next.prev = ptr.prev;
+					if (ptr.next != null) {
+						ptr.next.prev = ptr.prev;						
+					}
 					return;
 				}
 				ptr = ptr.next;
@@ -59,9 +66,11 @@ public class DoublyLinkedList<T> {
 		s.addNode("third");
 		s.addNode("fourth");
 		System.out.println(s.peek());
-		s.removeSingleNode("second");
+		s.removeSingleNode("first");
 		System.out.println(s.peek());
 		s.removeSingleNode("fourth");
+		System.out.println(s.peek());
+		s.removeSingleNode("third");
 		System.out.println(s.peek());
 		
 	}
